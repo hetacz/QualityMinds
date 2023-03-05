@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 public class AutoTestPO extends BasePage implements LocaleLoadable<AutoTestPO> {
 
     private static final String EMAIL = "testing@qualityminds.de";
-    private static final String LOCALE_ERR = "Unsupported locale";
     private static final String AUTOMATION_URL = "automation_url";
     private static final String AUTOMATION_TITLE = "automation_title";
     private static final String H1_TEXT = "h1text";
@@ -34,11 +33,6 @@ public class AutoTestPO extends BasePage implements LocaleLoadable<AutoTestPO> {
         waitForPageUrl(StringLoader.getInstance().strings(i18n).get(AUTOMATION_URL).asText());
         verifyH1Text(i18n);
         logPageLoaded();
-        return this;
-    }
-
-    public AutoTestPO closeCookies() {
-        acceptCookies();
         return this;
     }
 

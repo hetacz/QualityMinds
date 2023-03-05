@@ -52,11 +52,6 @@ public class JobOfferPO extends BasePage implements Loadable<JobOfferPO> {
         return this;
     }
 
-    public JobOfferPO closeCookies() {
-        acceptCookies();
-        return this;
-    }
-
     public JobOfferPO clickApplyBtn() {
         click(applyBtn);
         return this;
@@ -95,11 +90,6 @@ public class JobOfferPO extends BasePage implements Loadable<JobOfferPO> {
         return this;
     }
 
-    public JobOfferPO clearEmail() {
-        clear(emailFld);
-        return this;
-    }
-
     public JobOfferPO verifyEmailErrMsgBefore() {
         verifyEmailErrMsg(STD_ERR_MSG);
         return this;
@@ -110,13 +100,8 @@ public class JobOfferPO extends BasePage implements Loadable<JobOfferPO> {
         return this;
     }
 
-    public JobOfferPO verifyEmailErrMsgNotExists() {
-        verifyErrMsgNotExists(emailErr);
-        return this;
-    }
-
     public JobOfferPO verifyCoverLetterErrMsgNotExists() {
-        verifyErrMsgNotExists(coverLetterErr);
+        Assertions.assertThat(getExistingElement(coverLetterErr).isDisplayed()).isFalse();
         return this;
     }
 
@@ -156,9 +141,5 @@ public class JobOfferPO extends BasePage implements Loadable<JobOfferPO> {
 
     private void verifyEmailErrMsg(String expected) {
         Assertions.assertThat(getText(emailErr)).isEqualTo(expected);
-    }
-
-    private void verifyErrMsgNotExists(By locator) {
-        Assertions.assertThat(getExistingElement(locator).isDisplayed()).isFalse();
     }
 }

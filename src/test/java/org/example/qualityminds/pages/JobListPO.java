@@ -2,8 +2,6 @@ package org.example.qualityminds.pages;
 
 import org.assertj.core.api.Assertions;
 import org.example.qualityminds.base.BasePage;
-import org.example.qualityminds.base.I18n;
-import org.example.qualityminds.utils.StringLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -31,6 +29,7 @@ public class JobListPO extends BasePage implements Loadable<JobListPO> {
     public JobListPO waitForPageToLoad() {
         waitForPageTitle(TITLE);
         waitForPageUrl(URL);
+        verifyH1Text();
         logPageLoaded();
         return this;
     }
@@ -50,7 +49,7 @@ public class JobListPO extends BasePage implements Loadable<JobListPO> {
         return new JobOfferPO(driver);
     }
 
-    private void verifyH1Text(I18n i18n) {
-        Assertions.assertThat(getText(h1)).isEqualTo(StringLoader.getInstance().strings(i18n).get(H1_TEXT).asText());
+    private void verifyH1Text() {
+        Assertions.assertThat(getText(h1)).isEqualTo(H1_TEXT);
     }
 }

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 public class ExampleTest extends BaseTest {
 
     private static final String DOCUMENT = "document.pdf";
+    private static final String SEARCH_TERM = "2021";
 
     @Test
     public void testCase1() {
@@ -43,7 +44,7 @@ public class ExampleTest extends BaseTest {
                 .hoverOverAboutUsMenu()
                 .clickAtEventsMenu()
                 .waitForPageToLoad()
-                .searchFor("2021")
+                .searchFor(SEARCH_TERM)
                 .verifyNoResults()
                 .verifyDatepickerBtnTextBefore()
                 .openDatepicker()

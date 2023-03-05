@@ -1,5 +1,7 @@
 # QualityMind test exercise
 
-Gradle report is exposed as an artifact.
+[![CI](https://github.com/hetacz/QualityMinds/actions/workflows/gradle.yml/badge.svg)](https://github.com/hetacz/QualityMinds/actions/workflows/gradle.yml)
 
-To run in headed mode, add `-Dheadless=FALSE` to the command line.
+The Gradle report is exposed as an artifact in GitHub Actions.
+
+To run in a headed mode, add `-Dheadless=FALSE` to the command line.

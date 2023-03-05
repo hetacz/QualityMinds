@@ -47,11 +47,6 @@ public class EventsPO extends BasePage implements Loadable<EventsPO> {
         return this;
     }
 
-    public EventsPO closeCookies() {
-        acceptCookies();
-        return this;
-    }
-
     public EventsPO searchFor(String input) {
         type(searchFld, input);
         click(findBtn);

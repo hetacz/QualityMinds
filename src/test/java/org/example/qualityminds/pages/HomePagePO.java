@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 public class HomePagePO extends BasePage implements Loadable<HomePagePO> {
 
     private static final String TITLE = "QualityMinds | Homepage";
-    private static final String LOCALE_ERR = "Unsupported locale";
     private static final String HOME_URL = "home_url";
 
     @Getter

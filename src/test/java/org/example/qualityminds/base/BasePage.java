@@ -56,14 +56,6 @@ public class BasePage {
         return getVisibleElement(locator).getText();
     }
 
-    protected final boolean isExisting(By locator) {
-        return !driver.findElements(locator).isEmpty();
-    }
-
-    protected final <T> void submitForm(T locator) {
-        getClickableElement(locator).submit();
-    }
-
     protected final void load(String url) {
         driver.get(HOME + url);
     }
@@ -106,6 +98,7 @@ public class BasePage {
                 : ExpectedConditions.visibilityOf((WebElement) locator));
     }
 
+    @SuppressWarnings("unchecked")
     protected final <T> List<WebElement> getVisibleElements(T locator) {
         return wait.until(isBy(locator)
                 ? ExpectedConditions.visibilityOfAllElementsLocatedBy((By) locator)
